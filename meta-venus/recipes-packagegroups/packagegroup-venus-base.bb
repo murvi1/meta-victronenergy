@@ -75,6 +75,7 @@ RDEPENDS_${PN} += "\
     rsync \
     rtl8192eu \
     screen \
+    signalk-server \
     socat \
     start-stop-daemon \
     strace \
