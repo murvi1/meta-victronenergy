@@ -70,6 +70,7 @@ RDEPENDS_${PN} += "\
 	ppp \
 	python-pymodbus \
 	python-pyserial \
+	python3 \
 	rsync \
 	rtl8192eu \
 	screen \
