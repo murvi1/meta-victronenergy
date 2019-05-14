@@ -39,7 +39,6 @@ RDEPENDS_${PN} += "\
     can-utils \
     connman \
     connman-tools \
-    crda \
     cronie \
     curl \
     custom-rc.d \
@@ -97,5 +96,6 @@ RDEPENDS_${PN} += "\
     watchdog \
     websockify-c \
     wget \
+    wireless-regdb-static \
     zip \
 "
