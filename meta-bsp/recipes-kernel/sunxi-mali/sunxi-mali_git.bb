@@ -7,7 +7,7 @@ COMPATIBLE_MACHINE = "sunxi"
 inherit module
 
 SRC_URI = "git://github.com/mripard/sunxi-mali.git;protocol=https"
-SRCREV = "69e23ab841cfe90a78fd163fb355fe5a6a7da260"
+SRCREV = "a480c161b5e1997b928e6230e8316b6d4a57e4f1"
 S = "${WORKDIR}/git"
 
 MALI_REV ?= "r8p1"
