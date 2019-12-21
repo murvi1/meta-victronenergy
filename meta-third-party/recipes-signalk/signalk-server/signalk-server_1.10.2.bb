@@ -16,8 +16,8 @@
 
 # Note that this is just signalk-server license. Via dependencies it drags
 # in a whole lot more types of licenses.
-LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://tmp/lib/node_modules/signalk-server/LICENSE;md5=34f8c1142fd6208a8be89399cb521df9"
+LICENSE = "CLOSED"
+#LIC_FILES_CHKSUM = "file://tmp/lib/node_modules/signalk-server/LICENSE;md5=34f8c1142fd6208a8be89399cb521df9"
 
 inherit daemontools
 
