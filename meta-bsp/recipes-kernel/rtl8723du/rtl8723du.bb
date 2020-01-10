@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.GPLv2;md5=751419260aa954499f
 SRC_URI = " \
     git://github.com/lwfinger/rtl8723du.git;protocol=https;branch=master \
 "
-SRCREV = "a8735e5e739a1e01aa17a6bd34b5cedba992b0be"
+SRCREV = "e1a104a0861874993ba84131d2222132cd1afcd5"
 
 S = "${WORKDIR}/git"
 
