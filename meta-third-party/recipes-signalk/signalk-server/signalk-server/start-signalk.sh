@@ -17,6 +17,12 @@ if [ ! -f "$PLUGINCONF/venus.json" ]; then
 	cp "$DEFAULTCONF/venus.json" "$PLUGINCONF"
 fi
 
+if [ ! -f "$CONF/defaults.json" ]; then
+	cp "$DEFAULTCONF/defaults.json" "$CONF"
+fi
+
+export DISABLED_PLUGIN_UPDATES="signalk-venus-plugin"
+export SIGNALK_DISABLE_SERVER_UPDATES=true
 export PRESERIALCOMMAND="/opt/victronenergy/serial-starter/stop-tty.sh"
 # export DEBUG=*
 exec /usr/lib/node_modules/signalk-server/bin/signalk-server -c /data/conf/signalk
