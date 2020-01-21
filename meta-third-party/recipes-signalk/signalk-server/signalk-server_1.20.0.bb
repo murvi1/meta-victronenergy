@@ -25,6 +25,7 @@ SRC_URI = " \
 	file://start-signalk.sh \
 	file://settings.json \
 	file://venus.json \
+	file://defaults.json \
 "
 
 DEPENDS = " \
@@ -48,15 +49,15 @@ NPM_ARCH ?= "arm"
 do_compile() {
 	# Fetch & install signalk-server
 
-	npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install -g --prefix ./tmp signalk-server@${PV}
+	npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install --no-optional -g --prefix ./tmp signalk-server@${PV}
+	#npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install --no-optional -g --prefix ./tmp /tmp/signalk-server-1.18.6.tgz
 
         cd ./tmp/lib/node_modules/signalk-server
 
 	# install plugins
 	# TODO: this could perhaps be done better, as now we specify a version here,
 	#       inside the recipe. Which is not common practice in OE.
-	npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install signalk-venus-plugin@1.10.0
-	npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install @signalk/signalk-node-red@2.8.0
+	npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install signalk-venus-plugin@1.14.1
 
 	# remove the files in put/test: they are compiled, though not cross-compiled thus
 	# giving QA errors as well as being useless; and also they are not necessary
@@ -78,6 +79,7 @@ do_install() {
 	# to the data partition on first boot.
 	install -d ${INSTALLDIR}/defaults
 	install -m 0755 ${WORKDIR}/settings.json ${INSTALLDIR}/defaults
+	install -m 0755 ${WORKDIR}/defaults.json ${INSTALLDIR}/defaults
 	install -m 0755 ${WORKDIR}/venus.json ${INSTALLDIR}/defaults
 }
 
