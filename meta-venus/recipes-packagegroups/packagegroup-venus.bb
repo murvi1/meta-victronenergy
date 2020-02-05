@@ -23,6 +23,10 @@ LICENSE = "MIT"
 
 DEPENDS = "packagegroup-venus-optional-packages venus-swu"
 
+# large image
+DEPENDS_append_beaglebone += "venus-swu-large"
+DEPENDS_append_sunxi += "venus-swu-large"
+
 # installer images
 DEPENDS_append_beaglebone += " venus-install-sdcard"
 DEPENDS_append_ccgx += "venus-install-sdcard"
