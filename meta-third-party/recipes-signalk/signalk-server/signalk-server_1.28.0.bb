@@ -57,7 +57,7 @@ do_compile() {
 	# install plugins
 	# TODO: this could perhaps be done better, as now we specify a version here,
 	#       inside the recipe. Which is not common practice in OE.
-	npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install signalk-venus-plugin@1.14.1
+	npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install signalk-venus-plugin@1.15.0
 
 	# remove the files in put/test: they are compiled, though not cross-compiled thus
 	# giving QA errors as well as being useless; and also they are not necessary
