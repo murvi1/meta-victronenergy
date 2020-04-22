@@ -5,4 +5,8 @@ inherit packagegroup
 LICENSE = "MIT"
 
 RDEPENDS_${PN} = "\
+    node-red \
+    node-red-contrib-victron \
+    nodejs-npm \
+    signalk-server \
 "

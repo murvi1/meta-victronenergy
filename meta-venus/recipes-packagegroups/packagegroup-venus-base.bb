@@ -65,9 +65,6 @@ RDEPENDS_${PN} += "\
     logo \
     nano \
     ncurses-tools \
-    node-red \
-    node-red-contrib-victron \
-    nodejs-npm \
     openssh \
     openssh-sftp-server \
     opkg \
@@ -79,7 +76,6 @@ RDEPENDS_${PN} += "\
     rsync \
     rtl8192eu \
     screen \
-    signalk-server \
     socat \
     start-stop-daemon \
     strace \
