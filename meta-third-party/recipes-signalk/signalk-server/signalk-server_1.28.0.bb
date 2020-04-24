@@ -39,6 +39,7 @@ RDEPENDS_${PN} += " \
 
 DAEMONTOOLS_SERVICE_DIR = "${sysconfdir}/${PN}/service"
 DAEMONTOOLS_RUN = "${libdir}/node_modules/signalk-server/bin/start-signalk.sh"
+DAEMONTOOLS_DOWN = "1"
 
 # ${@npm_oe_arch_map(d.getVar('TARGET_ARCH'), d)}"
 
