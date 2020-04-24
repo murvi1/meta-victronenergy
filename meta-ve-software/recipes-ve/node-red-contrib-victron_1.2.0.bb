@@ -7,11 +7,11 @@ RDEPENDS_${PN} += "\
 "
 
 SRC_URI = "\
-	git://github.com/victronenergy/node-red-contrib-victron.git;protocol=https;tag=${PV} \
+     https://github.com/victronenergy/${PN}/archive/${PV}.zip \
 "
 
-SRC_URI[md5sum] = "de57d1c11f568f3bf2cb6044184dc4eb"
-SRC_URI[sha256sum] = "3ee220e9aa915f20f57f2014ec6b93cec353da14250f6fbd8f86f5f38b2fdcd0"
+SRC_URI[md5sum] = "8f5ba4721505d6028f073c918f93aa13"
+SRC_URI[sha256sum] = "2344469c0b950745f8cb5e4dd27cb67fac7f044a437f2ed15436cd14d9377343"
 
 # prevent npm.bbclass from stripping off the node- from our package name. Doing so leads to
 # errors when building with a openembedded-core version that includes this commit:
@@ -21,7 +21,7 @@ NPMPN = "node-red-contrib-victron"
 inherit npm
 
 # npm.bbclass assumes we've been using the npm fetcher. Ofcourse we didn't; its eternally slow.
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/${PN}-${PV}"
 
 # Skip the arch QA check, since it trips over some precompiled binaries in the put npm module:
 # https://github.com/substack/node-put/issues/5
