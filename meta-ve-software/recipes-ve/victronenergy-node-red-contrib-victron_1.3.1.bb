@@ -7,11 +7,11 @@ RDEPENDS_${PN} += "\
 "
 
 SRC_URI = "\
-     https://github.com/victronenergy/${PN}/archive/v${PV}.zip \
+     https://github.com/victronenergy/node-red-contrib-victron/archive/v${PV}.zip \
 "
 
-SRC_URI[md5sum] = "86c2c443389f8ce7352fc78ad625f5c4"
-SRC_URI[sha256sum] = "ed1513b314ffc2bcb11ce97405bc22539b3b2748940e34b308b7dc61a58076fb"
+SRC_URI[md5sum] = "9217a75a7ec0ca6a371b8332042a5c03"
+SRC_URI[sha256sum] = "c5f6d49fdcffce9ee916fe434beda9f529c0097a427f345604687cfefa78f54e"
 
 # prevent npm.bbclass from stripping off the node- from our package name. Doing so leads to
 # errors when building with a openembedded-core version that includes this commit:
