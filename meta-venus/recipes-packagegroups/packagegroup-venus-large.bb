@@ -6,8 +6,9 @@ LICENSE = "MIT"
 
 RDEPENDS_${PN} = "\
     node-red \
+    node-red-dashboard \
     nodejs-npm \
+    packagegroup-core-buildessential \
     signalk-server \
     victronenergy-node-red-contrib-victron \
-    node-red-dashboard \
 "
