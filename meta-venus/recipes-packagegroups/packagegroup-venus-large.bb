@@ -9,4 +9,5 @@ RDEPENDS_${PN} = "\
     nodejs-npm \
     signalk-server \
     victronenergy-node-red-contrib-victron \
+    node-red-dashboard \
 "
