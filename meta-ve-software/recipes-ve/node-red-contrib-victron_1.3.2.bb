@@ -9,11 +9,12 @@ RDEPENDS_${PN} += "\
 "
 
 SRC_URI = "\
-     https://github.com/victronenergy/node-red-contrib-victron/archive/v${PV}.zip \
+	https://registry.npmjs.org/@${NPM_ORG}/${PN}/-/${PN}-${PV}.tgz;unpack=0 \
+	file://npm-shrinkwrap.json \
 "
 
-SRC_URI[md5sum] = "9217a75a7ec0ca6a371b8332042a5c03"
-SRC_URI[sha256sum] = "c5f6d49fdcffce9ee916fe434beda9f529c0097a427f345604687cfefa78f54e"
+SRC_URI[md5sum] = "d794d28fede1b3d26047f06e73a5b6e5"
+SRC_URI[sha256sum] = "a71109d4e8ba7d068fe81b60add56f1f65e64f99e0f44ee1d02df892d314eaaa"
 
 NPM_ORG="victronenergy"
 
