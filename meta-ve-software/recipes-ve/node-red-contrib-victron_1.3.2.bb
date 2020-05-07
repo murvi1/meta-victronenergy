@@ -2,7 +2,9 @@ SUMMARY = "Victron Venus D-Bus plugin for node-red"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d7725b8b5e691085738d564afb312302"
 
-S = "${WORKDIR}/${PN}-${PV}"
+#S = "${WORKDIR}/${PN}-${PV}"
+
+NPM_ORG="victronenergy"
 
 RDEPENDS_${PN} += "\
 	node-red \
@@ -13,10 +15,8 @@ SRC_URI = "\
 	file://npm-shrinkwrap.json \
 "
 
-SRC_URI[md5sum] = "d794d28fede1b3d26047f06e73a5b6e5"
-SRC_URI[sha256sum] = "a71109d4e8ba7d068fe81b60add56f1f65e64f99e0f44ee1d02df892d314eaaa"
-
-NPM_ORG="victronenergy"
+SRC_URI[md5sum] = "3c4091e5d125e66287712f839f850a5b"
+SRC_URI[sha256sum] = "ea30d1bf1ef25eefaa8454897bbbc880c97e474bba817ff00876d4c5668528f7"
 
 inherit npmve
 

@@ -2,8 +2,6 @@ SUMMARY = "Modbus for Node-RED"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=4ce3d0350364f3efff545d6ba54f61eb"
 
-S = "${WORKDIR}/${PN}-${PV}"
-
 RDEPENDS_${PN} += "\
 	node-red \
 "
@@ -13,7 +11,7 @@ SRC_URI = "\
 	file://npm-shrinkwrap.json \
 "
 
-SRC_URI[md5sum] = "948170979311cf634aee299dc9bb7150"
-SRC_URI[sha256sum] = "6271775a81fec5e0cb9e9f6341e875f18d28dd2ae8a7f64e4e25819b0917e27c"
+SRC_URI[md5sum] = "18b41eb8903591be86d46430d5cb52ed"
+SRC_URI[sha256sum] = "778809bea7ca20c31907c9f4f490ee383ab8c22169c0251b8cb27dff244cb9da"
 
 inherit npmve
