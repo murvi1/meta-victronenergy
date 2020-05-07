@@ -10,5 +10,5 @@ RDEPENDS_${PN} = "\
     nodejs-npm \
     packagegroup-core-buildessential \
     signalk-server \
-    victronenergy-node-red-contrib-victron \
+    node-red-contrib-victron \
 "
