@@ -53,6 +53,12 @@ npmve_do_install() {
 	fi
 }
 
+do_unpack_append() {
+    import os
+    prefix = d.getVar('WORKDIR') + '/' + d.getVar('PN') + '-' + d.getVar('PV')
+    os.system('tar xzf ' + prefix + '.tgz' + ' -C ' + prefix + ' --strip-components 1')
+}
+
 FILES_${PN} += " \
     ${libdir}/node_modules/${NPM_FILES_PREFIX}${PN} \
 "

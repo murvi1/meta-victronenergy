@@ -8,7 +8,7 @@ RDEPENDS_${PN} += "\
 "
 
 SRC_URI = "\
-	https://registry.npmjs.org/signalk-server/-/${PN}-${PV}.tgz \
+	https://registry.npmjs.org/signalk-server/-/${PN}-${PV}.tgz;unpack=0 \
 	file://start-signalk.sh \
 	file://settings.json \
 	file://venus.json \
@@ -17,8 +17,6 @@ SRC_URI = "\
 
 SRC_URI[md5sum] = "91f496c501e62e52133a87cb0f18a67e"
 SRC_URI[sha256sum] = "fc933e23486a1f674505d335f987a7605cb235a03493a247549870ee09213f39"
-
-NPM_COMPILE_COMMAND = "build"
 
 inherit npmve
 inherit daemontools
@@ -31,28 +29,22 @@ DAEMONTOOLS_LOG_DIR = "${DAEMONTOOLS_LOG_DIR_PREFIX}/signalk-server"
 
 NPM_INSTALLDIR = "${D}${libdir}/node_modules/${PN}"
 
-do_compile_prepend() {
-	echo "sk do_compile_prepend"
-	mv ${WORKDIR}/package/* ${WORKDIR}/${PN}-${PV}
-}
-
 do_install_append() {
-	INSTALLDIR=${D}${libdir}/node_modules/signalk-server
 
 	mkdir ${D}${bindir}
 	install -m 0755 ${WORKDIR}/start-signalk.sh ${D}${bindir}/signalk-server
 
 	# this folder keeps the default settings. start-signalk.sh copies them
 	# to the data partition on first boot.
-	install -d ${INSTALLDIR}/defaults
-	install -m 0755 ${WORKDIR}/settings.json ${INSTALLDIR}/defaults
-	install -m 0755 ${WORKDIR}/defaults.json ${INSTALLDIR}/defaults
-	install -m 0755 ${WORKDIR}/venus.json ${INSTALLDIR}/defaults
+	install -d ${NPM_INSTALLDIR}/defaults
+	install -m 0755 ${WORKDIR}/settings.json ${NPM_INSTALLDIR}/defaults
+	install -m 0755 ${WORKDIR}/defaults.json ${NPM_INSTALLDIR}/defaults
+	install -m 0755 ${WORKDIR}/venus.json ${NPM_INSTALLDIR}/defaults
 
-	(cd ${INSTALLDIR}; npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install signalk-venus-plugin@1.15.0)
+	(cd ${NPM_INSTALLDIR}; npm --arch=${NPM_ARCH} --target_arch=${NPM_ARCH} install signalk-venus-plugin@1.15.0)
 
 	# remove the files in put/test: they are compiled, though not cross-compiled thus
 	# giving QA errors as well as being useless; and also they are not necessary
-	rm -rf ${INSTALLDIR}/node_modules/put/test
+	rm -rf ${NPM_INSTALLDIR}/node_modules/put/test
 }
 
